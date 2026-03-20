@@ -5,14 +5,24 @@ public class Athlete {
     private int numSilver;
     private int numBronze;
     private int numTotal;
+    private int weightedScore;
     
-    public Athlete(String name, String country, int numGold, int numSilver, int numBronze, int numTotal) {
+    public Athlete(String name, String country, int numGold, int numSilver, int numBronze, int numTotal, int weightedScore) {
         this.name = name;
         this.country = country;
         this.numGold = numGold;
         this.numSilver = numSilver;
         this.numBronze = numBronze;
         this.numTotal = numTotal;
+        this.weightedScore = weightedScore;
+    }
+
+    public int getWeightedScore(){
+        return weightedScore;
+    }
+
+    public void setWeightedScore(int weightedScore){
+        this.weightedScore = weightedScore;
     }
 
     public String getName() {

@@ -23,6 +23,16 @@ public class DataManager {
                 
                 // 4. Parse data and create Athlete object
                 // TODO: roster.add(new Athlete(...));
+                String name = data[0];
+                String country = data[1];
+                int numGold = Integer.parseInt(data[2]);
+                int numSilver = Integer.parseInt(data[3]);
+                int numBronze = Integer.parseInt(data[4]);
+                int numTotal = Integer.parseInt(data[5]);
+
+                int weightedScore = 3*numGold+2*numSilver+numBronze;
+
+                roster.add(new Athlete(name,country,numGold,numSilver,numBronze,numTotal,weightedScore));
             }
             
             fileReader.close();
@@ -35,5 +45,8 @@ public class DataManager {
         }
 
         // 5. TODO: Implement your Level Up analysis here!
+        for(Athlete a:roster){
+            System.out.println(a.getName()+" weighted score: "+a.getWeightedScore());
+        }
     }
 }
